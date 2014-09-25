@@ -11,7 +11,7 @@ Do something like:
 
 `/meme fry "Not sure if easy meme creation is good" "or just wasting lives"`
 
-And a few minutes the bot should post an image like:
+And a few seconds the bot should post an image like:
 
 ![Futurama Fry Meme](http://cdn.meme.am/instances/300x/54615053.jpg)
 
@@ -54,6 +54,17 @@ The app itself should be importable doing something like:
 ```python
 from marty import app as application
 ```
+
+Then, go to api.slack.com and create a new slack access token (this is under "Authentication") toward the bottom of the page.
+The token issued by this is what you'll use as the token in the config.
+
+Finally, in the integrations section of your slack team panel, add a Slash Command (/meme), and point it at the www.serverwhereyourunthemartyflaskapp.com/command endpoint using method POST. I also enabled showing the command in the autocomplete list with the following description and usage strings:
+
+Makes a meme and posts it
+
+[meme name] "top text" "bottom text"
+
+That should be it!
 
 Licensing
 =======
